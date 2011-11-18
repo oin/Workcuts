@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Workcuts' target in the 'Workcuts' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
