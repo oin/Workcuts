@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ShowStatusItem</key>
+	<true/>
+	<key>ShowProjectTitleInStatusItem</key>
+	<true/>
+	<key>ShowProjectTitleInDock</key>
+	<true/>
+	<key>ShortcutKeyCombo</key>
+	<dict>
+		<key>keyCode</key>
+		<integer>49</integer>
+		<key>modifiers</key>
+		<integer>6400</integer>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,532 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		256AC3DA0F4B6AC300CF3369 /* WorkcutsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* WorkcutsAppDelegate.m */; };
+		6E81C8691471B3C0004ED825 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6E81C8681471B3C0004ED825 /* Credits.rtf */; };
+		6E81C8881471B99F004ED825 /* WorkcutsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E81C8871471B99F004ED825 /* WorkcutsManager.m */; };
+		6E81C88B1471B9B4004ED825 /* WorkcutsProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E81C88A1471B9B4004ED825 /* WorkcutsProject.m */; };
+		6E81C8DA1473080D004ED825 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E81C8D91473080D004ED825 /* Defaults.plist */; };
+		6E81C8EA147321FB004ED825 /* StatusItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E81C8E9147321FB004ED825 /* StatusItem.png */; };
+		6E81C90C147322DF004ED825 /* Workcuts.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6E81C90B147322DF004ED825 /* Workcuts.icns */; };
+		6E81C9EE14747606004ED825 /* StatusItemAlternate.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E81C9ED14747606004ED825 /* StatusItemAlternate.png */; };
+		6EA47A251475C1C600F3B3FA /* WorkcutsPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA47A241475C1C600F3B3FA /* WorkcutsPreferencesController.m */; };
+		6EA47C921476532800F3B3FA /* WorkcutsShortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA47C911476532800F3B3FA /* WorkcutsShortcut.m */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		B41AF394147674CF007EA6E6 /* RubyCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41AF393147674CF007EA6E6 /* RubyCocoa.framework */; };
+		B41AF3B3147675E2007EA6E6 /* RubyCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B41AF393147674CF007EA6E6 /* RubyCocoa.framework */; };
+		B4E4F68E14767A3100E206F1 /* PTKeyCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4E4F67614767A3100E206F1 /* PTKeyCodes.plist */; };
+		B4E4F68F14767A3100E206F1 /* PTKeyComboPanel.nib in Resources */ = {isa = PBXBuildFile; fileRef = B4E4F67814767A3100E206F1 /* PTKeyComboPanel.nib */; };
+		B4E4F69014767A3100E206F1 /* PTKeyboardIcon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = B4E4F68014767A3100E206F1 /* PTKeyboardIcon.tiff */; };
+		B4E4F69114767A3100E206F1 /* PTHotKey.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B4E4F68214767A3100E206F1 /* PTHotKey.h */; };
+		B4E4F69214767A3100E206F1 /* PTHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E4F68314767A3100E206F1 /* PTHotKey.m */; };
+		B4E4F69314767A3100E206F1 /* PTHotKeyCenter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B4E4F68414767A3100E206F1 /* PTHotKeyCenter.h */; };
+		B4E4F69414767A3100E206F1 /* PTHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E4F68514767A3100E206F1 /* PTHotKeyCenter.m */; };
+		B4E4F69514767A3100E206F1 /* PTKeyBroadcaster.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B4E4F68614767A3100E206F1 /* PTKeyBroadcaster.h */; };
+		B4E4F69614767A3100E206F1 /* PTKeyBroadcaster.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E4F68714767A3100E206F1 /* PTKeyBroadcaster.m */; };
+		B4E4F69714767A3100E206F1 /* PTKeyCodeTranslator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B4E4F68814767A3100E206F1 /* PTKeyCodeTranslator.h */; };
+		B4E4F69814767A3100E206F1 /* PTKeyCodeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E4F68914767A3100E206F1 /* PTKeyCodeTranslator.m */; };
+		B4E4F69914767A3100E206F1 /* PTKeyCombo.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B4E4F68A14767A3100E206F1 /* PTKeyCombo.h */; };
+		B4E4F69A14767A3100E206F1 /* PTKeyCombo.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E4F68B14767A3100E206F1 /* PTKeyCombo.m */; };
+		B4E4F69B14767A3100E206F1 /* PTKeyComboPanel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B4E4F68C14767A3100E206F1 /* PTKeyComboPanel.h */; };
+		B4E4F69C14767A3100E206F1 /* PTKeyComboPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E4F68D14767A3100E206F1 /* PTKeyComboPanel.m */; };
+		B4E4F6FA147684BF00E206F1 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = B4E4F6F9147684BF00E206F1 /* MainMenu.nib */; };
+		B4E4F70E1476864F00E206F1 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4E4F70D1476864F00E206F1 /* Carbon.framework */; };
+		B4E4F7361476873500E206F1 /* Preferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = B4E4F7351476873500E206F1 /* Preferences.nib */; };
+		B4E4F89D14769E9200E206F1 /* UKFileWatcher.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B4E4F89414769E9200E206F1 /* UKFileWatcher.h */; };
+		B4E4F89E14769E9200E206F1 /* UKFileWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E4F89514769E9200E206F1 /* UKFileWatcher.m */; };
+		B4E4F89F14769E9200E206F1 /* UKFNSubscribeFileWatcher.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B4E4F89614769E9200E206F1 /* UKFNSubscribeFileWatcher.h */; };
+		B4E4F8A014769E9200E206F1 /* UKFNSubscribeFileWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E4F89714769E9200E206F1 /* UKFNSubscribeFileWatcher.m */; };
+		B4E4F8A114769E9200E206F1 /* UKKQueue Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = B4E4F89814769E9200E206F1 /* UKKQueue Readme.txt */; };
+		B4E4F8A214769E9200E206F1 /* UKKQueue.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B4E4F89914769E9200E206F1 /* UKKQueue.h */; };
+		B4E4F8A314769E9200E206F1 /* UKKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E4F89A14769E9200E206F1 /* UKKQueue.m */; };
+		B4E4F8A414769E9200E206F1 /* UKMainThreadProxy.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B4E4F89B14769E9200E206F1 /* UKMainThreadProxy.h */; };
+		B4E4F8A514769E9200E206F1 /* UKMainThreadProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E4F89C14769E9200E206F1 /* UKMainThreadProxy.m */; };
+		B4E4F9641476B68700E206F1 /* WorkcutsOpenIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B4E4F9631476B68700E206F1 /* WorkcutsOpenIcon.png */; };
+		B4E4FB6C1476C9F000E206F1 /* app_init.rb in Resources */ = {isa = PBXBuildFile; fileRef = B4E4FB6B1476C9F000E206F1 /* app_init.rb */; };
+		B4E4FBCF1476CAED00E206F1 /* ShortcutGrinder.rb in Resources */ = {isa = PBXBuildFile; fileRef = B4E4FBCE1476CAED00E206F1 /* ShortcutGrinder.rb */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6E81C8AF1472FE06004ED825 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B41AF3B3147675E2007EA6E6 /* RubyCocoa.framework in CopyFiles */,
+				B4E4F69114767A3100E206F1 /* PTHotKey.h in CopyFiles */,
+				B4E4F69314767A3100E206F1 /* PTHotKeyCenter.h in CopyFiles */,
+				B4E4F69514767A3100E206F1 /* PTKeyBroadcaster.h in CopyFiles */,
+				B4E4F69714767A3100E206F1 /* PTKeyCodeTranslator.h in CopyFiles */,
+				B4E4F69914767A3100E206F1 /* PTKeyCombo.h in CopyFiles */,
+				B4E4F69B14767A3100E206F1 /* PTKeyComboPanel.h in CopyFiles */,
+				B4E4F89D14769E9200E206F1 /* UKFileWatcher.h in CopyFiles */,
+				B4E4F89F14769E9200E206F1 /* UKFNSubscribeFileWatcher.h in CopyFiles */,
+				B4E4F8A214769E9200E206F1 /* UKKQueue.h in CopyFiles */,
+				B4E4F8A414769E9200E206F1 /* UKMainThreadProxy.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		256AC3D80F4B6AC300CF3369 /* WorkcutsAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkcutsAppDelegate.h; sourceTree = "<group>"; };
+		256AC3D90F4B6AC300CF3369 /* WorkcutsAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkcutsAppDelegate.m; sourceTree = "<group>"; wrapsLines = 1; };
+		256AC3F00F4B6AF500CF3369 /* Workcuts_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workcuts_Prefix.pch; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		6E81C8681471B3C0004ED825 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		6E81C8861471B99F004ED825 /* WorkcutsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkcutsManager.h; sourceTree = "<group>"; };
+		6E81C8871471B99F004ED825 /* WorkcutsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkcutsManager.m; sourceTree = "<group>"; };
+		6E81C8891471B9B4004ED825 /* WorkcutsProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkcutsProject.h; sourceTree = "<group>"; };
+		6E81C88A1471B9B4004ED825 /* WorkcutsProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkcutsProject.m; sourceTree = "<group>"; };
+		6E81C8D91473080D004ED825 /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Defaults.plist; sourceTree = "<group>"; };
+		6E81C8E9147321FB004ED825 /* StatusItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusItem.png; sourceTree = "<group>"; };
+		6E81C90B147322DF004ED825 /* Workcuts.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Workcuts.icns; sourceTree = "<group>"; };
+		6E81C9ED14747606004ED825 /* StatusItemAlternate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusItemAlternate.png; sourceTree = "<group>"; };
+		6EA47A231475C1C600F3B3FA /* WorkcutsPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkcutsPreferencesController.h; sourceTree = "<group>"; };
+		6EA47A241475C1C600F3B3FA /* WorkcutsPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkcutsPreferencesController.m; sourceTree = "<group>"; };
+		6EA47C901476532800F3B3FA /* WorkcutsShortcut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkcutsShortcut.h; sourceTree = "<group>"; };
+		6EA47C911476532800F3B3FA /* WorkcutsShortcut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkcutsShortcut.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Workcuts-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Workcuts-Info.plist"; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* Workcuts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workcuts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B41AF393147674CF007EA6E6 /* RubyCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RubyCocoa.framework; path = /Library/Frameworks/RubyCocoa.framework; sourceTree = "<absolute>"; };
+		B4E4F67714767A3100E206F1 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = English; path = English.lproj/PTKeyCodes.plist; sourceTree = "<group>"; };
+		B4E4F67914767A3100E206F1 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/PTKeyComboPanel.nib; sourceTree = "<group>"; };
+		B4E4F67A14767A3100E206F1 /* French */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = French; path = French.lproj/PTKeyCodes.plist; sourceTree = "<group>"; };
+		B4E4F67B14767A3100E206F1 /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = French.lproj/PTKeyComboPanel.nib; sourceTree = "<group>"; };
+		B4E4F67C14767A3100E206F1 /* German */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = German; path = German.lproj/PTKeyCodes.plist; sourceTree = "<group>"; };
+		B4E4F67D14767A3100E206F1 /* German */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = German; path = German.lproj/PTKeyComboPanel.nib; sourceTree = "<group>"; };
+		B4E4F67E14767A3100E206F1 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = Japanese; path = Japanese.lproj/PTKeyCodes.plist; sourceTree = "<group>"; };
+		B4E4F67F14767A3100E206F1 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/PTKeyComboPanel.nib; sourceTree = "<group>"; };
+		B4E4F68014767A3100E206F1 /* PTKeyboardIcon.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = PTKeyboardIcon.tiff; sourceTree = "<group>"; };
+		B4E4F68214767A3100E206F1 /* PTHotKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTHotKey.h; sourceTree = "<group>"; };
+		B4E4F68314767A3100E206F1 /* PTHotKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTHotKey.m; sourceTree = "<group>"; };
+		B4E4F68414767A3100E206F1 /* PTHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTHotKeyCenter.h; sourceTree = "<group>"; };
+		B4E4F68514767A3100E206F1 /* PTHotKeyCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTHotKeyCenter.m; sourceTree = "<group>"; };
+		B4E4F68614767A3100E206F1 /* PTKeyBroadcaster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKeyBroadcaster.h; sourceTree = "<group>"; };
+		B4E4F68714767A3100E206F1 /* PTKeyBroadcaster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKeyBroadcaster.m; sourceTree = "<group>"; };
+		B4E4F68814767A3100E206F1 /* PTKeyCodeTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKeyCodeTranslator.h; sourceTree = "<group>"; };
+		B4E4F68914767A3100E206F1 /* PTKeyCodeTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKeyCodeTranslator.m; sourceTree = "<group>"; };
+		B4E4F68A14767A3100E206F1 /* PTKeyCombo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKeyCombo.h; sourceTree = "<group>"; };
+		B4E4F68B14767A3100E206F1 /* PTKeyCombo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKeyCombo.m; sourceTree = "<group>"; };
+		B4E4F68C14767A3100E206F1 /* PTKeyComboPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKeyComboPanel.h; sourceTree = "<group>"; };
+		B4E4F68D14767A3100E206F1 /* PTKeyComboPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKeyComboPanel.m; sourceTree = "<group>"; };
+		B4E4F6F9147684BF00E206F1 /* MainMenu.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = MainMenu.nib; sourceTree = "<group>"; };
+		B4E4F70D1476864F00E206F1 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		B4E4F7351476873500E206F1 /* Preferences.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Preferences.nib; sourceTree = "<group>"; };
+		B4E4F89414769E9200E206F1 /* UKFileWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UKFileWatcher.h; sourceTree = "<group>"; };
+		B4E4F89514769E9200E206F1 /* UKFileWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UKFileWatcher.m; sourceTree = "<group>"; };
+		B4E4F89614769E9200E206F1 /* UKFNSubscribeFileWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UKFNSubscribeFileWatcher.h; sourceTree = "<group>"; };
+		B4E4F89714769E9200E206F1 /* UKFNSubscribeFileWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UKFNSubscribeFileWatcher.m; sourceTree = "<group>"; };
+		B4E4F89814769E9200E206F1 /* UKKQueue Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "UKKQueue Readme.txt"; sourceTree = "<group>"; };
+		B4E4F89914769E9200E206F1 /* UKKQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UKKQueue.h; sourceTree = "<group>"; };
+		B4E4F89A14769E9200E206F1 /* UKKQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UKKQueue.m; sourceTree = "<group>"; };
+		B4E4F89B14769E9200E206F1 /* UKMainThreadProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UKMainThreadProxy.h; sourceTree = "<group>"; };
+		B4E4F89C14769E9200E206F1 /* UKMainThreadProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UKMainThreadProxy.m; sourceTree = "<group>"; };
+		B4E4F9631476B68700E206F1 /* WorkcutsOpenIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WorkcutsOpenIcon.png; sourceTree = "<group>"; };
+		B4E4FB6B1476C9F000E206F1 /* app_init.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = app_init.rb; sourceTree = "<group>"; };
+		B4E4FBCE1476CAED00E206F1 /* ShortcutGrinder.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ShortcutGrinder.rb; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				B41AF394147674CF007EA6E6 /* RubyCocoa.framework in Frameworks */,
+				B4E4F70E1476864F00E206F1 /* Carbon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				256AC3D80F4B6AC300CF3369 /* WorkcutsAppDelegate.h */,
+				256AC3D90F4B6AC300CF3369 /* WorkcutsAppDelegate.m */,
+				6E81C8861471B99F004ED825 /* WorkcutsManager.h */,
+				6E81C8871471B99F004ED825 /* WorkcutsManager.m */,
+				6E81C8891471B9B4004ED825 /* WorkcutsProject.h */,
+				6E81C88A1471B9B4004ED825 /* WorkcutsProject.m */,
+				6EA47A231475C1C600F3B3FA /* WorkcutsPreferencesController.h */,
+				6EA47A241475C1C600F3B3FA /* WorkcutsPreferencesController.m */,
+				6EA47C901476532800F3B3FA /* WorkcutsShortcut.h */,
+				6EA47C911476532800F3B3FA /* WorkcutsShortcut.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B4E4F70D1476864F00E206F1 /* Carbon.framework */,
+				B41AF393147674CF007EA6E6 /* RubyCocoa.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* Workcuts.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* Workcuts */ = {
+			isa = PBXGroup;
+			children = (
+				B4E4F89314769E9200E206F1 /* UKKQueue */,
+				B4E4F67414767A3100E206F1 /* PTHotKeysLib */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = Workcuts;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				256AC3F00F4B6AF500CF3369 /* Workcuts_Prefix.pch */,
+				B4E4FB6B1476C9F000E206F1 /* app_init.rb */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+				B4E4FBCE1476CAED00E206F1 /* ShortcutGrinder.rb */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B4E4F9631476B68700E206F1 /* WorkcutsOpenIcon.png */,
+				6E81C90B147322DF004ED825 /* Workcuts.icns */,
+				6E81C8E9147321FB004ED825 /* StatusItem.png */,
+				6E81C9ED14747606004ED825 /* StatusItemAlternate.png */,
+				8D1107310486CEB800E47090 /* Workcuts-Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				B4E4F6F9147684BF00E206F1 /* MainMenu.nib */,
+				6E81C8681471B3C0004ED825 /* Credits.rtf */,
+				6E81C8D91473080D004ED825 /* Defaults.plist */,
+				B4E4F7351476873500E206F1 /* Preferences.nib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B4E4F67414767A3100E206F1 /* PTHotKeysLib */ = {
+			isa = PBXGroup;
+			children = (
+				B4E4F67514767A3100E206F1 /* res */,
+				B4E4F68114767A3100E206F1 /* src */,
+			);
+			path = PTHotKeysLib;
+			sourceTree = "<group>";
+		};
+		B4E4F67514767A3100E206F1 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				B4E4F67614767A3100E206F1 /* PTKeyCodes.plist */,
+				B4E4F67814767A3100E206F1 /* PTKeyComboPanel.nib */,
+				B4E4F68014767A3100E206F1 /* PTKeyboardIcon.tiff */,
+			);
+			path = res;
+			sourceTree = "<group>";
+		};
+		B4E4F68114767A3100E206F1 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				B4E4F68214767A3100E206F1 /* PTHotKey.h */,
+				B4E4F68314767A3100E206F1 /* PTHotKey.m */,
+				B4E4F68414767A3100E206F1 /* PTHotKeyCenter.h */,
+				B4E4F68514767A3100E206F1 /* PTHotKeyCenter.m */,
+				B4E4F68614767A3100E206F1 /* PTKeyBroadcaster.h */,
+				B4E4F68714767A3100E206F1 /* PTKeyBroadcaster.m */,
+				B4E4F68814767A3100E206F1 /* PTKeyCodeTranslator.h */,
+				B4E4F68914767A3100E206F1 /* PTKeyCodeTranslator.m */,
+				B4E4F68A14767A3100E206F1 /* PTKeyCombo.h */,
+				B4E4F68B14767A3100E206F1 /* PTKeyCombo.m */,
+				B4E4F68C14767A3100E206F1 /* PTKeyComboPanel.h */,
+				B4E4F68D14767A3100E206F1 /* PTKeyComboPanel.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		B4E4F89314769E9200E206F1 /* UKKQueue */ = {
+			isa = PBXGroup;
+			children = (
+				B4E4F89414769E9200E206F1 /* UKFileWatcher.h */,
+				B4E4F89514769E9200E206F1 /* UKFileWatcher.m */,
+				B4E4F89614769E9200E206F1 /* UKFNSubscribeFileWatcher.h */,
+				B4E4F89714769E9200E206F1 /* UKFNSubscribeFileWatcher.m */,
+				B4E4F89814769E9200E206F1 /* UKKQueue Readme.txt */,
+				B4E4F89914769E9200E206F1 /* UKKQueue.h */,
+				B4E4F89A14769E9200E206F1 /* UKKQueue.m */,
+				B4E4F89B14769E9200E206F1 /* UKMainThreadProxy.h */,
+				B4E4F89C14769E9200E206F1 /* UKMainThreadProxy.m */,
+			);
+			path = UKKQueue;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* Workcuts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Workcuts" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				6E81C8AF1472FE06004ED825 /* CopyFiles */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Workcuts;
+			productInstallPath = "$(HOME)/Applications";
+			productName = Workcuts;
+			productReference = 8D1107320486CEB800E47090 /* Workcuts.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Workcuts" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Workcuts */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* Workcuts */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				6E81C8691471B3C0004ED825 /* Credits.rtf in Resources */,
+				6E81C8DA1473080D004ED825 /* Defaults.plist in Resources */,
+				6E81C8EA147321FB004ED825 /* StatusItem.png in Resources */,
+				6E81C90C147322DF004ED825 /* Workcuts.icns in Resources */,
+				6E81C9EE14747606004ED825 /* StatusItemAlternate.png in Resources */,
+				B4E4F68E14767A3100E206F1 /* PTKeyCodes.plist in Resources */,
+				B4E4F68F14767A3100E206F1 /* PTKeyComboPanel.nib in Resources */,
+				B4E4F69014767A3100E206F1 /* PTKeyboardIcon.tiff in Resources */,
+				B4E4F6FA147684BF00E206F1 /* MainMenu.nib in Resources */,
+				B4E4F7361476873500E206F1 /* Preferences.nib in Resources */,
+				B4E4F8A114769E9200E206F1 /* UKKQueue Readme.txt in Resources */,
+				B4E4F9641476B68700E206F1 /* WorkcutsOpenIcon.png in Resources */,
+				B4E4FB6C1476C9F000E206F1 /* app_init.rb in Resources */,
+				B4E4FBCF1476CAED00E206F1 /* ShortcutGrinder.rb in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				256AC3DA0F4B6AC300CF3369 /* WorkcutsAppDelegate.m in Sources */,
+				6E81C8881471B99F004ED825 /* WorkcutsManager.m in Sources */,
+				6E81C88B1471B9B4004ED825 /* WorkcutsProject.m in Sources */,
+				6EA47A251475C1C600F3B3FA /* WorkcutsPreferencesController.m in Sources */,
+				6EA47C921476532800F3B3FA /* WorkcutsShortcut.m in Sources */,
+				B4E4F69214767A3100E206F1 /* PTHotKey.m in Sources */,
+				B4E4F69414767A3100E206F1 /* PTHotKeyCenter.m in Sources */,
+				B4E4F69614767A3100E206F1 /* PTKeyBroadcaster.m in Sources */,
+				B4E4F69814767A3100E206F1 /* PTKeyCodeTranslator.m in Sources */,
+				B4E4F69A14767A3100E206F1 /* PTKeyCombo.m in Sources */,
+				B4E4F69C14767A3100E206F1 /* PTKeyComboPanel.m in Sources */,
+				B4E4F89E14769E9200E206F1 /* UKFileWatcher.m in Sources */,
+				B4E4F8A014769E9200E206F1 /* UKFNSubscribeFileWatcher.m in Sources */,
+				B4E4F8A314769E9200E206F1 /* UKKQueue.m in Sources */,
+				B4E4F8A514769E9200E206F1 /* UKMainThreadProxy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B4E4F67614767A3100E206F1 /* PTKeyCodes.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4E4F67714767A3100E206F1 /* English */,
+				B4E4F67A14767A3100E206F1 /* French */,
+				B4E4F67C14767A3100E206F1 /* German */,
+				B4E4F67E14767A3100E206F1 /* Japanese */,
+			);
+			name = PTKeyCodes.plist;
+			sourceTree = "<group>";
+		};
+		B4E4F67814767A3100E206F1 /* PTKeyComboPanel.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B4E4F67914767A3100E206F1 /* English */,
+				B4E4F67B14767A3100E206F1 /* French */,
+				B4E4F67D14767A3100E206F1 /* German */,
+				B4E4F67F14767A3100E206F1 /* Japanese */,
+			);
+			name = PTKeyComboPanel.nib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Workcuts_Prefix.pch;
+				INFOPLIST_FILE = "Workcuts-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Workcuts;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Workcuts_Prefix.pch;
+				INFOPLIST_FILE = "Workcuts-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Workcuts;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ONLY_ACTIVE_ARCH_PRE_XCODE_3_1)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = 4.0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH_PRE_XCODE_3_1 = "$(NATIVE_ARCH)";
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = 4.0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Workcuts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Workcuts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
