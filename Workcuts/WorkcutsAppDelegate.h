@@ -51,6 +51,8 @@
 -(IBAction)clearRecents:(id)sender;
 -(IBAction)openRecent:(id)sender;
 -(IBAction)openShortcut:(id)sender;
+-(IBAction)openShortcutFromStatusMenu:(id)sender;
+-(IBAction)openShortcutFromDock:(id)sender;
 -(IBAction)popupMenu:(id)sender;
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "WorkcutsShortcut.h"
 
 @interface WorkcutsProject : NSObject {
 	NSString* path;
@@ -22,7 +21,6 @@
 -(NSString*)configFilePath;
 -(BOOL)configFileExists;
 -(NSArray*)shortcuts;
--(WorkcutsShortcut*)shortcutWithIdentifier:(NSString*)identifier;
 -(void)configFileDidChange:(id)notification;
 -(void)watchConfigFile;
 

@@ -16,12 +16,12 @@
 		6E81C90C147322DF004ED825 /* Workcuts.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6E81C90B147322DF004ED825 /* Workcuts.icns */; };
 		6E81C9EE14747606004ED825 /* StatusItemAlternate.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E81C9ED14747606004ED825 /* StatusItemAlternate.png */; };
 		6EA47A251475C1C600F3B3FA /* WorkcutsPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA47A241475C1C600F3B3FA /* WorkcutsPreferencesController.m */; };
-		6EA47C921476532800F3B3FA /* WorkcutsShortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA47C911476532800F3B3FA /* WorkcutsShortcut.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		B41AF394147674CF007EA6E6 /* RubyCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41AF393147674CF007EA6E6 /* RubyCocoa.framework */; };
 		B41AF3B3147675E2007EA6E6 /* RubyCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B41AF393147674CF007EA6E6 /* RubyCocoa.framework */; };
+		B424D3FD147826C90095FFD4 /* Workcuts.rb in Resources */ = {isa = PBXBuildFile; fileRef = B424D3FC147826C90095FFD4 /* Workcuts.rb */; };
 		B4E4F68E14767A3100E206F1 /* PTKeyCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4E4F67614767A3100E206F1 /* PTKeyCodes.plist */; };
 		B4E4F68F14767A3100E206F1 /* PTKeyComboPanel.nib in Resources */ = {isa = PBXBuildFile; fileRef = B4E4F67814767A3100E206F1 /* PTKeyComboPanel.nib */; };
 		B4E4F69014767A3100E206F1 /* PTKeyboardIcon.tiff in Resources */ = {isa = PBXBuildFile; fileRef = B4E4F68014767A3100E206F1 /* PTKeyboardIcon.tiff */; };
@@ -51,7 +51,7 @@
 		B4E4F8A514769E9200E206F1 /* UKMainThreadProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E4F89C14769E9200E206F1 /* UKMainThreadProxy.m */; };
 		B4E4F9641476B68700E206F1 /* WorkcutsOpenIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B4E4F9631476B68700E206F1 /* WorkcutsOpenIcon.png */; };
 		B4E4FB6C1476C9F000E206F1 /* app_init.rb in Resources */ = {isa = PBXBuildFile; fileRef = B4E4FB6B1476C9F000E206F1 /* app_init.rb */; };
-		B4E4FBCF1476CAED00E206F1 /* ShortcutGrinder.rb in Resources */ = {isa = PBXBuildFile; fileRef = B4E4FBCE1476CAED00E206F1 /* ShortcutGrinder.rb */; };
+		B4E4FBCF1476CAED00E206F1 /* WorkcutsKey.rb in Resources */ = {isa = PBXBuildFile; fileRef = B4E4FBCE1476CAED00E206F1 /* WorkcutsKey.rb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -98,11 +98,10 @@
 		6E81C9ED14747606004ED825 /* StatusItemAlternate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusItemAlternate.png; sourceTree = "<group>"; };
 		6EA47A231475C1C600F3B3FA /* WorkcutsPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkcutsPreferencesController.h; sourceTree = "<group>"; };
 		6EA47A241475C1C600F3B3FA /* WorkcutsPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkcutsPreferencesController.m; sourceTree = "<group>"; };
-		6EA47C901476532800F3B3FA /* WorkcutsShortcut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkcutsShortcut.h; sourceTree = "<group>"; };
-		6EA47C911476532800F3B3FA /* WorkcutsShortcut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkcutsShortcut.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Workcuts-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Workcuts-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Workcuts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workcuts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41AF393147674CF007EA6E6 /* RubyCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RubyCocoa.framework; path = /Library/Frameworks/RubyCocoa.framework; sourceTree = "<absolute>"; };
+		B424D3FC147826C90095FFD4 /* Workcuts.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Workcuts.rb; sourceTree = "<group>"; };
 		B4E4F67714767A3100E206F1 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = English; path = English.lproj/PTKeyCodes.plist; sourceTree = "<group>"; };
 		B4E4F67914767A3100E206F1 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/PTKeyComboPanel.nib; sourceTree = "<group>"; };
 		B4E4F67A14767A3100E206F1 /* French */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = French; path = French.lproj/PTKeyCodes.plist; sourceTree = "<group>"; };
@@ -138,7 +137,7 @@
 		B4E4F89C14769E9200E206F1 /* UKMainThreadProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UKMainThreadProxy.m; sourceTree = "<group>"; };
 		B4E4F9631476B68700E206F1 /* WorkcutsOpenIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WorkcutsOpenIcon.png; sourceTree = "<group>"; };
 		B4E4FB6B1476C9F000E206F1 /* app_init.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = app_init.rb; sourceTree = "<group>"; };
-		B4E4FBCE1476CAED00E206F1 /* ShortcutGrinder.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = ShortcutGrinder.rb; sourceTree = "<group>"; };
+		B4E4FBCE1476CAED00E206F1 /* WorkcutsKey.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = WorkcutsKey.rb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,8 +165,6 @@
 				6E81C88A1471B9B4004ED825 /* WorkcutsProject.m */,
 				6EA47A231475C1C600F3B3FA /* WorkcutsPreferencesController.h */,
 				6EA47A241475C1C600F3B3FA /* WorkcutsPreferencesController.m */,
-				6EA47C901476532800F3B3FA /* WorkcutsShortcut.h */,
-				6EA47C911476532800F3B3FA /* WorkcutsShortcut.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -220,7 +217,8 @@
 				256AC3F00F4B6AF500CF3369 /* Workcuts_Prefix.pch */,
 				B4E4FB6B1476C9F000E206F1 /* app_init.rb */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
-				B4E4FBCE1476CAED00E206F1 /* ShortcutGrinder.rb */,
+				B4E4FBCE1476CAED00E206F1 /* WorkcutsKey.rb */,
+				B424D3FC147826C90095FFD4 /* Workcuts.rb */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -369,7 +367,8 @@
 				B4E4F8A114769E9200E206F1 /* UKKQueue Readme.txt in Resources */,
 				B4E4F9641476B68700E206F1 /* WorkcutsOpenIcon.png in Resources */,
 				B4E4FB6C1476C9F000E206F1 /* app_init.rb in Resources */,
-				B4E4FBCF1476CAED00E206F1 /* ShortcutGrinder.rb in Resources */,
+				B4E4FBCF1476CAED00E206F1 /* WorkcutsKey.rb in Resources */,
+				B424D3FD147826C90095FFD4 /* Workcuts.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +384,6 @@
 				6E81C8881471B99F004ED825 /* WorkcutsManager.m in Sources */,
 				6E81C88B1471B9B4004ED825 /* WorkcutsProject.m in Sources */,
 				6EA47A251475C1C600F3B3FA /* WorkcutsPreferencesController.m in Sources */,
-				6EA47C921476532800F3B3FA /* WorkcutsShortcut.m in Sources */,
 				B4E4F69214767A3100E206F1 /* PTHotKey.m in Sources */,
 				B4E4F69414767A3100E206F1 /* PTHotKeyCenter.m in Sources */,
 				B4E4F69614767A3100E206F1 /* PTKeyBroadcaster.m in Sources */,

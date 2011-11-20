@@ -52,6 +52,14 @@
 	[self bind:@"showsProjectTitleInStatusItem" toObject:[NSUserDefaultsController sharedUserDefaultsController] withKeyPath:@"values.ShowProjectTitleInStatusItem" options:nil];
 	[self bind:@"showsProjectTitleInDock" toObject:[NSUserDefaultsController sharedUserDefaultsController] withKeyPath:@"values.ShowProjectTitleInDock" options:nil];
 	[self bind:@"shortcutKeyCombo" toObject:[NSUserDefaultsController sharedUserDefaultsController] withKeyPath:@"values.ShortcutKeyCombo" options:nil];
+	
+	// Subscribe to notifications
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shouldRefresh:) name:@"ReloadShortcuts" object:nil];
+}
+
+-(void)shouldRefresh:(NSNotification*)theNotification
+{
+	[self refresh];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification
@@ -84,13 +92,14 @@
 
 -(void)awakeFromNib
 {
-	[self refresh];
 	// Observe
 	[manager addObserver:self forKeyPath:@"currentProjectPath" options:nil context:nil];
 	// Retain commonly removed and added things
 	[activateMenuItem retain];
 	
 	[self rebuildRecentProjectsMenu];
+	
+	[self refresh];
 	[self updateDockIcon];
 }
 
@@ -232,8 +241,12 @@
 	for(int i=0; i<[shortcutsMenu numberOfItems]; ++i) {
 		NSMenuItem *itm = [shortcutsMenu itemAtIndex:i];
 		if(![itm isSeparatorItem]) {
-			NSMenuItem *myItm = [m addItemWithTitle:[itm title] action:[itm action] keyEquivalent:@""];
+			NSMenuItem *myItm = [m addItemWithTitle:[itm title] action:[itm action] keyEquivalent:[itm keyEquivalent]];
 			[myItm setTarget:[itm target]];
+			[myItm setState:[itm state]];
+			[myItm setRepresentedObject:[itm representedObject]];
+			[myItm setAlternate:[itm isAlternate]];
+			[myItm setKeyEquivalentModifierMask:[itm keyEquivalentModifierMask]];
 		} else {
 			[m addItem:[NSMenuItem separatorItem]];
 		}
@@ -250,11 +263,17 @@
 	}
 	
 	WorkcutsProject *p = [manager currentProject];
+	
 	int n = [[p shortcuts] count];
 	if(n > 0) {
 		for(int i=0; i<n; ++i) {
-			WorkcutsShortcut *itm = [[p shortcuts] objectAtIndex:i];
-			NSMenuItem *myItm = [shortcutsMenu addItemWithTitle:[itm title] action:@selector(openShortcut:) keyEquivalent:@""];
+			id itm = [[p shortcuts] objectAtIndex:i];
+			NSMenuItem *myItm = [shortcutsMenu addItemWithTitle:[itm title] action:@selector(openShortcut:) keyEquivalent:[itm keyEquivalent]];
+			[myItm setKeyEquivalentModifierMask:[[itm keyEquivalentModifier] unsignedIntValue]];
+			if([[itm checked] boolValue])
+				[myItm setState: NSOnState];
+			if([[itm alternate] boolValue])
+				[myItm setAlternate: YES];
 			[myItm setTarget:self];
 			[myItm setRepresentedObject:itm];
 		}
@@ -278,7 +297,11 @@
 		NSMenuItem *itm = [shortcutsMenu itemAtIndex:i];
 		if(![itm isSeparatorItem]) {
 			NSMenuItem *myItm = [statusMenu addItemWithTitle:[itm title] action:[itm action] keyEquivalent:[itm keyEquivalent]];
+			[myItm setKeyEquivalentModifierMask:[itm keyEquivalentModifierMask]];
 			[myItm setTarget:[itm target]];
+			[myItm setState:[itm state]];
+			[myItm setAlternate:[itm isAlternate]];
+			[myItm setRepresentedObject:[itm representedObject]];
 		} else {
 			[statusMenu addItem:[NSMenuItem separatorItem]];
 		}
@@ -321,7 +344,7 @@
 {
 	NSError *err = nil;
 	if(![[manager currentProject] configFileExists]) {
-		NSString *newFileContents = @"# Edit your shortcuts below.\n\n";
+		NSString *newFileContents = @"# Edit your shortcuts below.\n\nshortcut :example1 do\n\tnamed \"Example item\"\n\tpress \"Cmd R\"\n\twill do\n\t\tOSX::NSLog(\"Hello\")\n\tend\nend\n\nshortcut :example1alt do\n\tnamed \"Another example item\"\n\tpress \"Cmd Option R\"\n\talternative\nend\n\nshortcut :example2 do\n\tnamed \"Check me item\"\n\n\twill do\n\t\tself.checked = !self.checked\n\tend\nend\n";
 		[newFileContents writeToFile:[[manager currentProject] configFilePath] atomically:YES encoding:NSUTF8StringEncoding error:&err];
 		[[manager currentProject] watchConfigFile];
 	}
@@ -363,8 +386,9 @@
 
 -(IBAction)openShortcut:(id)sender
 {
-	WorkcutsShortcut *s = [sender representedObject];
+	id s = [sender representedObject];
 	[s execute];
+	[self refresh];
 }
 
 -(BOOL)validateMenuItem:(NSMenuItem *)item

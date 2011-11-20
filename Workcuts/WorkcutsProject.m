@@ -38,11 +38,15 @@
 	
 	[self watchConfigFile];
 	
+	if([self configFileExists])
+		[self evaluate];
+	
 	return self;
 }
 
 -(void)dealloc
 {
+	[[[[NSClassFromString(@"WorkcutsShortcutProvider") alloc] init] autorelease] clear];
 	NSNotificationCenter *wnc = [[NSWorkspace sharedWorkspace] notificationCenter];
 	[wnc removeObserver:self];
 	[[UKKQueue sharedFileWatcher] removePath:[self configFilePath]];
@@ -83,30 +87,11 @@
 
 -(NSArray*)shortcuts
 {
-	return shortcuts;
+	Class WorkcutsShortcutProvider = NSClassFromString(@"WorkcutsShortcutProvider");
+	return [[[[WorkcutsShortcutProvider alloc] init] autorelease] shortcuts];
 }
 
--(WorkcutsShortcut*)shortcutWithIdentifier:(NSString*)identifier
-{
-	if([identifier length] == 0)
-		return nil;
-	
-	// Check if the shortcut is already defined
-	NSEnumerator *e = [shortcuts objectEnumerator];
-	WorkcutsShortcut* value;
-	
-	while(value = [e nextObject]) {
-		if([identifier isEqual:[value identifier]])
-			return value;
-	}
-	
-	// The object has not been found. Create it.
-	value = [[WorkcutsShortcut alloc] initWithIdentifier:identifier];
-	[shortcuts addObject:value];
-	return value;
-}
-
--(void)configFileDidChange:(id)notification
+-(void)evaluate
 {
 	// Reload the config file
 	NSError *err = nil;
@@ -115,10 +100,16 @@
 		[NSAlert alertWithError:err];
 		return;
 	}
-	
 	// Evaluate the contents
-	Class ShortcutGrinder = NSClassFromString(@"ShortcutGrinder");
-	[[[[ShortcutGrinder alloc] init] autorelease] evaluate:contents];
+	[[[[NSClassFromString(@"WorkcutsShortcutProvider") alloc] init] autorelease] evaluate:contents];
+	
+	// Should reload the shortcuts
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"ReloadShortcuts" object:self];
+}
+
+-(void)configFileDidChange:(id)notification
+{
+	[self performSelectorOnMainThread:@selector(evaluate) withObject:self waitUntilDone:NO];
 }
 
 @end
