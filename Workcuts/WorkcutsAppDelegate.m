@@ -2,9 +2,11 @@
 //  WorkcutsAppDelegate.m
 //  Workcuts
 //
-//  Created by Jonathan Aceituno on 14/11/11.
-//  Copyright 2011 Jonathan Aceituno. All rights reserved.
-//
+/* This program is free software. It comes without any warranty, to
+ * the extent permitted by applicable law. You can redistribute it
+ * and/or modify it under the terms of the Do What The Fuck You Want
+ * To Public License, Version 2, as published by Sam Hocevar. See
+ * http://sam.zoy.org/wtfpl/COPYING for more details. */
 
 #import "WorkcutsAppDelegate.h"
 
@@ -19,6 +21,7 @@
 	if(self == nil)
 		return nil;
 	
+	evalErrorSheet = nil;
 	manager = [[WorkcutsManager alloc] init];
 	
 	return self;
@@ -34,6 +37,8 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+	[NSBundle loadNibNamed:@"CommandOutput" owner:self];
+	
 	// Load the standard user defaults
 	[[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Defaults" ofType:@"plist"]]];
 	
@@ -55,6 +60,53 @@
 	
 	// Subscribe to notifications
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shouldRefresh:) name:@"ReloadShortcuts" object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showEvalError:) name:@"WorkcutsEvalError" object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeEvalError:) name:@"WorkcutsEvalSuccess" object:nil];
+	
+	[manager initProject];
+}
+
+-(void)showEvalError:(NSNotification*)theNotification
+{
+	BOOL ok = NO;
+	if(!evalErrorSheet) {
+		[NSBundle loadNibNamed:@"ErrorSheet" owner:self];
+		ok = YES;
+	}
+	
+	NSDictionary *info = [theNotification userInfo];
+	
+	[errorView setString:[NSString stringWithFormat:@"%@\n%@", [info objectForKey:@"name"], [info objectForKey:@"error"]]];
+	[errorView setFont:[NSFont userFixedPitchFontOfSize:10]];
+	
+	if(ok)
+		[[NSApplication sharedApplication] beginSheet:evalErrorSheet modalForWindow:nil modalDelegate:self didEndSelector:@selector(didEndEvalErrorSheet:returnCode:contextInfo:) contextInfo:nil];
+}
+
+-(void)closeEvalError:(NSNotification*)theNotification
+{
+	if(evalErrorSheet) {
+		[self closeErrorSheet:nil];
+	}
+	
+	NSDictionary *info = [theNotification userInfo];
+
+	if([info objectForKey:@"stdout"] != nil && [[[info objectForKey:@"stdout"] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] > 0) {;
+		[cmdOutputView setString: [info objectForKey:@"stdout"]];
+		[cmdOutputView setFont:[NSFont userFixedPitchFontOfSize:10]];
+		[cmdOutputWindow makeKeyAndOrderFront:nil];
+	}
+}
+
+-(IBAction)closeErrorSheet:(id)sender
+{
+	[[NSApplication sharedApplication] endSheet:evalErrorSheet];
+}
+
+-(void)didEndEvalErrorSheet:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
+{
+    [evalErrorSheet orderOut:self];
+	evalErrorSheet = nil;
 }
 
 -(void)shouldRefresh:(NSNotification*)theNotification
@@ -76,7 +128,6 @@
 
 -(void)setShortcutKeyCombo:(id)value
 {
-	NSLog(@"Value: %@", value);
 	id combo = [[[PTKeyCombo alloc] initWithPlistRepresentation: value] autorelease];
 	[shortcutsMenuHotKey setKeyCombo:combo];
 	[[PTHotKeyCenter sharedCenter] registerHotKey:shortcutsMenuHotKey];
@@ -310,6 +361,10 @@
 	// Re-add a separator and the Activate menu item
 	[statusMenu addItem:[NSMenuItem separatorItem]];
 	[statusMenu addItem:activateMenuItem];
+	
+	NSMenuItem *quitW = [statusMenu addItemWithTitle:@"Quit Workcuts" action:@selector(terminate:) keyEquivalent:@"q"];
+	[quitW setTarget:[NSApplication sharedApplication]];
+	[quitW setKeyEquivalentModifierMask:NSCommandKeyMask];
 }
 
 -(void)rebuildRecentProjectsMenu
@@ -344,7 +399,7 @@
 {
 	NSError *err = nil;
 	if(![[manager currentProject] configFileExists]) {
-		NSString *newFileContents = @"# Edit your shortcuts below.\n\nshortcut :example1 do\n\tnamed \"Example item\"\n\tpress \"Cmd R\"\n\twill do\n\t\tOSX::NSLog(\"Hello\")\n\tend\nend\n\nshortcut :example1alt do\n\tnamed \"Another example item\"\n\tpress \"Cmd Option R\"\n\talternative\nend\n\nshortcut :example2 do\n\tnamed \"Check me item\"\n\n\twill do\n\t\tself.checked = !self.checked\n\tend\nend\n";
+		NSString *newFileContents = @"# Edit your shortcuts below.\n\nshortcut :example1 do\n\tnamed \"Example item\"\n\tpress \"Cmd R\"\n\twill do\n\t\tputs \"Hello\"\n\tend\nend\n\nshortcut :example1alt do\n\tnamed \"Another example item\"\n\tpress \"Cmd Option R\"\n\talternative\nend\n\nshortcut :example2 do\n\tnamed \"Check me item\"\n\n\twill do\n\t\tself.checked = !self.checked\n\tend\nend\n";
 		[newFileContents writeToFile:[[manager currentProject] configFilePath] atomically:YES encoding:NSUTF8StringEncoding error:&err];
 		[[manager currentProject] watchConfigFile];
 	}
@@ -389,6 +444,11 @@
 	id s = [sender representedObject];
 	[s execute];
 	[self refresh];
+}
+
+-(IBAction)help:(id)sender
+{
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"WorkcutsHelp" ofType:@"html"]]];
 }
 
 -(BOOL)validateMenuItem:(NSMenuItem *)item

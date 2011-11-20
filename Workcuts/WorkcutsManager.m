@@ -2,9 +2,11 @@
 //  WorkcutsManager.m
 //  Workcuts
 //
-//  Created by Jonathan Aceituno on 14/11/11.
-//  Copyright 2011 Jonathan Aceituno. All rights reserved.
-//
+/* This program is free software. It comes without any warranty, to
+ * the extent permitted by applicable law. You can redistribute it
+ * and/or modify it under the terms of the Do What The Fuck You Want
+ * To Public License, Version 2, as published by Sam Hocevar. See
+ * http://sam.zoy.org/wtfpl/COPYING for more details. */
 
 #import "WorkcutsManager.h"
 
@@ -22,10 +24,13 @@
 	[recentProjects addObjectsFromArray:[[NSUserDefaults standardUserDefaults] arrayForKey:@"RecentProjects"]];
 	project = nil;
 	
+	return self;
+}
+
+-(void)initProject
+{
 	if([recentProjects count] > 0)
 		[self setCurrentProjectPath:[recentProjects objectAtIndex:0]];
-	
-	return self;
 }
 
 -(void)dealloc

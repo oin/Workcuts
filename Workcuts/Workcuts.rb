@@ -1,4 +1,15 @@
+#
+#  Workcuts.rb
+#  Workcuts
+#
+# This program is free software. It comes without any warranty, to
+# the extent permitted by applicable law. You can redistribute it
+# and/or modify it under the terms of the Do What The Fuck You Want
+# To Public License, Version 2, as published by Sam Hocevar. See
+# http://sam.zoy.org/wtfpl/COPYING for more details.
+
 require 'singleton'
+require 'stringio'
 
 module Workcuts
 	@@shortcuts = []
@@ -43,7 +54,25 @@ class Shortcut
 	end
 	
 	def execute
-		instance_eval &@action if !@action.nil?
+		if !@action.nil?
+			fstdout = $stdout
+			fstderr = $stderr
+			$stdout = StringIO.new
+			$stderr = StringIO.new
+			begin
+				instance_eval &@action
+				# Send a success notification
+				OSX::NSNotificationCenter.defaultCenter.postNotificationName_object_userInfo_("WorkcutsEvalSuccess", self, { "stdout" => $stdout.string + $stderr.string })
+			rescue Exception => exc
+				# Format the error
+				errorName = $!.to_s
+				errorString = $@.join("\n")
+				# Send an error notification
+				OSX::NSNotificationCenter.defaultCenter.postNotificationName_object_userInfo_("WorkcutsEvalError", self, { "name" => errorName, "error" => errorString})
+			end
+			$stderr = fstderr
+			$stdout = fstdout
+		end
 	end
 	
 	def check
@@ -54,10 +83,14 @@ class Shortcut
 		@checked = false
 	end
 	
+	def toggle
+		@checked = !@checked
+	end
+	
 	def to_s
 		s = "<:" << self.identifier.to_s
 		s << ",title=\"" << self.title << "\""
-		s << ",key=" << self.key if !self.key.nil?
+		s << ",key=" << self.key.to_s if !self.key.nil?
 		s << ",checked" if self.checked
 		s << ",folds" if self.alternate
 		s << ">"
@@ -73,6 +106,28 @@ def shortcut(identifier, &block)
 	found.instance_eval &block if block_given?
 end
 
+def terminal(script, exitafter = false, pressreturn = false)
+	# Fetch the settings set from user preferences
+	settingsset = OSX::NSUserDefaults.standardUserDefaults["TerminalSettingsSet"]
+	# Create the Applescript
+	applescript = "tell application \"Terminal\"\n"
+	applescript << "\tactivate\n"
+	applescript << "\tdo script \"" << "cd \\\"" << $WorkcutsPath << "\\\" && clear; " << script << "; echo"
+	applescript << "; exit" if exitafter
+	applescript << "\"\n"
+	applescript << "\tset current settings of first tab of first window to settings set \"" << settingsset << "\"\n"
+	applescript << "end tell\n"
+	if pressreturn
+		applescript << "delay 1\n"
+		applescript << "tell application \"System Events\"\n"
+		applescript << "\tkey code 36\n"
+		applescript << "end tell\n"
+	end
+	# Execute
+	asexec = OSX::NSAppleScript.alloc.initWithSource_(applescript)
+	asexec.executeAndReturnError_(nil)
+end
+
 class WorkcutsShortcutProvider < OSX::NSObject
 	include OSX
 	def init
@@ -81,6 +136,10 @@ class WorkcutsShortcutProvider < OSX::NSObject
 	end
 	def shortcuts
 		WorkcutsShortcut.shortcuts
+	end
+	def setpath(s)
+		$WorkcutsPath = s
+		Dir.chdir(s)
 	end
 	def evaluate(str)
 		WorkcutsShortcut.evaluate(str)
@@ -98,11 +157,16 @@ class WorkcutsShortcut < OSX::NSObject
 	end
 	
 	def self.evaluate(str)
-		#begin
-			eval(str)
-		#rescue Exception => exc
-		#	OSX::NSLog("Planted")
-		#end
+		begin
+			Kernel.class_eval(str)
+			NSNotificationCenter.defaultCenter.postNotificationName_object_userInfo_("WorkcutsEvalSuccess", self, nil)
+		rescue Exception => exc
+			# Format the error
+			errorName = $!.to_s
+			errorString = $@.join("\n")
+			# Send an error notification
+			NSNotificationCenter.defaultCenter.postNotificationName_object_userInfo_("WorkcutsEvalError", self, { "name" => errorName, "error" => errorString})
+		end
 	end
 	
 	def initialize

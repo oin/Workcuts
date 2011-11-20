@@ -10,7 +10,9 @@
         activate = id;
         clearRecents = id;
         close = id;
+        closeErrorSheet = id;
         editWorkcuts = id;
+        help = id;
         open = id;
         openRecent = id;
         openShortcut = id;
@@ -21,23 +23,15 @@
     OUTLETS =     {
         activateMenuItem = NSMenuItem;
         clearRecentsMenuItem = NSMenuItem;
+        cmdOutputView = NSTextView;
+        cmdOutputWindow = NSWindow;
+        errorView = NSTextView;
+        evalErrorSheet = NSWindow;
         recentProjectsMenu = NSMenu;
         shortcutsMenu = NSMenu;
         statusMenu = NSMenu;
     };
     SUPERCLASS = NSObject;
-},
-        {
-    ACTIONS =     {
-        setGlobalShortcut = id;
-    };
-    CLASS = WorkcutsPreferencesController;
-    LANGUAGE = ObjC;
-    OUTLETS =     {
-        keyComboField = NSTextField;
-        settingsSets = NSPopUpButton;
-    };
-    SUPERCLASS = NSWindowController;
 }
     );
     IBVersion = 1;

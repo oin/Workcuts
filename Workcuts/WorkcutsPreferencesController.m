@@ -2,9 +2,11 @@
 //  WorkcutsPreferencesController.m
 //  Workcuts
 //
-//  Created by Jonathan Aceituno on 17/11/11.
-//  Copyright 2011 Jonathan Aceituno. All rights reserved.
-//
+/* This program is free software. It comes without any warranty, to
+ * the extent permitted by applicable law. You can redistribute it
+ * and/or modify it under the terms of the Do What The Fuck You Want
+ * To Public License, Version 2, as published by Sam Hocevar. See
+ * http://sam.zoy.org/wtfpl/COPYING for more details. */
 
 #import "WorkcutsPreferencesController.h"
 
@@ -17,7 +19,13 @@
 -(id)init
 {
 	self = [super initWithWindowNibName:@"Preferences"];
+	
 	return self;
+}
+
+-(void)dealloc
+{
+	[super dealloc];
 }
 
 -(void)awakeFromNib
@@ -25,6 +33,26 @@
 	id c = [[NSUserDefaults standardUserDefaults] objectForKey: @"ShortcutKeyCombo"];
 	id currentCombo = [[[PTKeyCombo alloc] initWithPlistRepresentation: c] autorelease];
 	[keyComboField setStringValue:[currentCombo description]];
+	
+	// Set the settings sets
+	[settingsSets removeAllItems];
+	NSString *pathOfScript = [[NSBundle mainBundle] pathForResource:@"ListTerminalSettingsSets" ofType:@"scpt"];
+	NSDictionary *errors = [NSDictionary dictionary];
+	NSAppleScript *script = [[NSAppleScript alloc] initWithContentsOfURL:[NSURL fileURLWithPath:pathOfScript] error:&errors];
+	
+	NSAppleEventDescriptor *desc = [script executeAndReturnError:nil];
+	
+	int count = [desc numberOfItems];
+	
+	for(int i=0; i<count; ++i) {
+		if([[desc descriptorAtIndex:i] stringValue] != nil) {
+			[settingsSets addItemWithTitle:[[desc descriptorAtIndex:i] stringValue]];
+		}
+	}
+	
+	[settingsSets selectItemWithTitle:[[NSUserDefaults standardUserDefaults] stringForKey:@"TerminalSettingsSet"]];
+	
+	[script release];
 }
 
 -(IBAction)setGlobalShortcut:(id)sender

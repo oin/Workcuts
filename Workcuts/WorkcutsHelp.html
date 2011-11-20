@@ -1,0 +1,487 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>workcuts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+/* 
+ This document has been created with Marked.app <http://markedapp.com>, Copyright 2011 Brett Terpstra
+ Please leave this notice in place, along with any additional credits below.
+ ---------------------------------------------------------------
+ SwissStyle by Brett Terpstra
+ */
+
+body
+{
+    -webkit-font-smoothing:antialiased;
+    font:normal .8764em/1.5em Arial,Verdana,sans-serif;
+    margin:0
+}
+
+html>body
+{
+    font-size:13px
+}
+
+li
+{
+    font-size:110%
+}
+
+li li
+{
+    font-size:100%
+}
+
+li p
+{
+    font-size:100%;
+    margin:.5em 0
+}
+
+h1
+{
+    color:#000;
+    font-size:2.2857em;
+    line-height:.6563em;
+    margin:.6563em 0
+}
+
+h2
+{
+    color:#111;
+    font-size:1.7143em;
+    line-height:.875em;
+    margin:.875em 0
+}
+
+h3
+{
+    color:#111;
+    font-size:1.5em;
+    line-height:1em;
+    margin:1em 0
+}
+
+h4
+{
+    color:#111;
+    font-size:1.2857em;
+    line-height:1.1667em;
+    margin:1.1667em 0
+}
+
+h6
+{
+    font-size:1em;
+    line-height:1.5em;
+    margin:1.5em 0
+}
+
+body,p,td,div
+{
+    color:#111;
+    font-family:Helvetica,Arial,sans-serif;
+    word-wrap:break-word
+}
+
+h1,h2,h3,h4,h5,h6
+{
+    line-height:1.5em
+}
+
+a
+{
+    -webkit-transition:color .2s ease-in-out;
+    color:#0d6ea1;
+    text-decoration:none
+}
+
+a:hover
+{
+    color:#3593d9
+}
+
+h2 em
+{
+    color:#111;
+    padding-left:10px;
+    text-shadow:0 1px 0 #FFF
+}
+
+.footnote
+{
+    color:#0d6ea1;
+    font-size:.8em;
+    vertical-align:super
+}
+
+#wrapper img
+{
+    max-width:100%
+}
+
+dd
+{
+    margin-bottom:1em
+}
+
+li > p:first-child
+{
+    margin:0
+}
+
+ul ul,ul ol
+{
+    margin-bottom:.4em
+}
+
+caption,col,colgroup,table,tbody,td,tfoot,th,thead,tr
+{
+    border-spacing:0
+}
+
+table
+{
+    border:1px solid rgba(0,0,0,0.25);
+    border-collapse:collapse;
+    display:table;
+    empty-cells:hide;
+    margin:-1px 0 23px;
+    padding:0;
+    table-layout:fixed
+}
+
+caption
+{
+    display:table-caption;
+    font-weight:700
+}
+
+col
+{
+    display:table-column
+}
+
+colgroup
+{
+    display:table-column-group
+}
+
+tbody
+{
+    display:table-row-group
+}
+
+tfoot
+{
+    display:table-footer-group
+}
+
+thead
+{
+    display:table-header-group
+}
+
+td,th
+{
+    display:table-cell
+}
+
+tr
+{
+    display:table-row
+}
+
+table th,table td
+{
+    font-size:1.1em;
+    line-height:23px;
+    padding:0 1em
+}
+
+table thead
+{
+    background:rgba(0,0,0,0.15);
+    border:1px solid rgba(0,0,0,0.15);
+    border-bottom:1px solid rgba(0,0,0,0.2)
+}
+
+table tbody
+{
+    background:rgba(0,0,0,0.05)
+}
+
+table tfoot
+{
+    background:rgba(0,0,0,0.15);
+    border:1px solid rgba(0,0,0,0.15);
+    border-top:1px solid rgba(0,0,0,0.2)
+}
+
+figure
+{
+    display:inline-block;
+    margin-bottom:1.2em;
+    position:relative
+}
+
+figcaption
+{
+    -webkit-transition:all .2s ease-in-out;
+    background:rgba(0,0,0,0);
+    bottom:0;
+    color:rgba(255,255,255,0);
+    left:0;
+    position:absolute;
+    text-align:center;
+    width:100%
+}
+
+figure:hover
+{
+    cursor:pointer
+}
+
+figcaption:hover
+{
+    background:rgba(0,0,0,.56);
+    color:rgba(255,255,255,1)
+}
+
+.poetry pre
+{
+    display:block;
+    font-family:Georgia, Garamond, serif!important;
+    font-size:110%!important;
+    font-style:italic;
+    line-height:1.6em;
+    margin-left:1em
+}
+
+.poetry pre code
+{
+    font-family:Georgia, Garamond, serif!important
+}
+
+sup,sub,a.footnote
+{
+    font-size:1.4ex;
+    height:0;
+    line-height:1;
+    position:relative;
+    vertical-align:super
+}
+
+sub {
+    vertical-align: sub;
+    top: -1px;
+}
+
+p,h5
+{
+    font-size:1.1429em;
+    line-height:1.3125em;
+    margin:1.3125em 0
+}
+
+dt,th
+{
+    font-weight:700
+}
+
+table tr:nth-child(odd),table th:nth-child(odd),table td:nth-child(odd)
+{
+    background:rgba(255,255,255,0.06)
+}
+
+table tr:nth-child(even),table td:nth-child(even)
+{
+    background:rgba(0,0,0,0.06)
+}
+
+@media print {
+    body
+    {
+        overflow:auto
+    }
+    
+    #wrapper
+    {
+        background:#fff;
+        color:#303030;
+        font-size:85%;
+        padding:10px;
+        position:relative;
+        text-indent:0
+    }
+}
+
+@media screen {
+    .inverted {
+        background:#333
+    }
+    
+    .inverted p,.inverted td,.inverted li,.inverted h1,.inverted h2,.inverted h3,.inverted h4,.inverted h5,.inverted h6,.inverted pre,.inverted code,.inverted th
+    {
+        color:#eee!important
+    }
+    
+    .inverted a
+    {
+        color:#fff;
+        text-decoration:underline
+    }
+    
+    #wrapper
+    {
+        padding:20px
+    }
+    
+    .inverted #wrapper
+    {
+        background:#333;
+    }
+}
+</style>
+
+</head>
+<body class="normal">
+  <div id="wrapper">
+      <h1 id="worckutshelp">Worckuts Help</h1>
+
+<p>Workcuts is a simple per-project keyboard shortcut and menu manager with Ruby scripting for fast access to your projects&#8217; most repeated tasks, for Mac OS X.</p>
+
+<h2 id="download">Download</h2>
+
+<ul>
+<li>Download <a href="http://oin.name/workcuts-1.0.dmg">Workcuts 1.0</a> (DMG, Mac OS X 10.4.8 or more)</li>
+<li>Grab the source on <a href="https://bitbucket.org/sainteforce/workcuts">Bitbucket</a> !</li>
+</ul>
+
+<h2 id="howtouseworkcuts">How to use Workcuts</h2>
+
+<p>Workcuts is a simple Mac OS X application that opens projects and gives access to the project&#8217;s shortcuts. A project is simply a folder in your computer. A shortcut is a command which can be associated with a keystroke.</p>
+
+<h3 id="gettingstarted">Getting started</h3>
+
+<ul>
+<li>Download Workcuts (see above) and install it</li>
+<li>Open Workcuts</li>
+<li>Open a project with the <em>Project &gt; Open&#8230;</em> menu. Remember, a project is just <strong>any folder</strong>.</li>
+<li>If you press the global shortcut key (Cmd Opt Ctrl Space by default), a menu appears in the bottom left corner of your screen. This is the <em>shortcuts menu</em>. Apart from the global shortcut key, you can find it in the <em>Shortcuts</em> menu (in the menu bar), in the Workcuts status item (if activated), or in the Workcuts dock menu.</li>
+<li>You can see there&#8217;s only one element in the shortcuts menu. It is called <em>Edit Workcuts.rb&#8230;</em>. Once activated, it opens the file called <code>Workcuts.rb</code> in your project directory, with your favorite editor. If no file has this name, Workcuts creates it automatically and fills it with example shortcuts. Yes, because it&#8217;s the file that specifies what are the shortcuts for the current project. See below for a syntax description.</li>
+<li>Save your Workcuts.rb file and Workcuts will update itself automatically. If there&#8217;s an error in the file, Workcuts will nag you about it.</li>
+<li>In order to use your shortcuts, show the shortcuts menu (for instance with the global keyboard shortcut) and then select the shortcut you want (for instance by pressing the shortcut&#8217;s associated keystroke).</li>
+</ul>
+
+<p>The project you&#8217;re working on is kept across different executions of Workcuts.</p>
+
+<h3 id="workcutsfilesyntax">Workcuts file syntax</h3>
+
+<p>The file must be called <code>Workcuts.rb</code> and be placed in the root of your project folder. Here is a minimal example for one shortcut :</p>
+
+<pre><code>shortcut :firstshortcut do
+    named &quot;My first shortcut&quot;
+end
+</code></pre>
+
+<p>A shortcut is defined by the word <code>shortcut</code>, followed by an <strong>identifier</strong> (an identifier is the colon character followed by letters, no spaces), followed by the word <code>do</code>, followed by one or more lines specifying the shortcuts properties, followed by the word <code>end</code>. You can have as many shortcuts as you want and you can specify a shortcut in several places, like this :</p>
+
+<pre><code>shortcut :firstshortcut do
+    named &quot;My first shortcut&quot;
+end
+
+# ...
+
+shortcut :firstshortcut do
+    press &quot;A&quot;
+    will do
+        # Ruby code
+    end
+end
+</code></pre>
+
+<p>Please be aware that the entire <code>Workcuts.rb</code> file is itself a Ruby script (hence the extension). Specifying a shortcut&#8217;s properties can be done by using the methods <code>named</code> (to tell its title), <code>press</code> (to tell its associated keystroke), <code>will</code> (to tell what command the shortcut will do in a Ruby block), <code>toggle</code> (to set/unset the shortcut tickmark), <code>check</code>/<code>uncheck</code>, <code>alternative</code>/<code>noalternative</code>&#8230;</p>
+
+<pre><code># Methods           # Examples
+named(title)        # named &quot;My keystroke&quot;
+press(keystroke)    # press &quot;Cmd Shift F1&quot;
+will(&amp;block)        # will do
+                    #   terminal &quot;make&quot;
+                    # end
+# etc.
+</code></pre>
+
+<p>You can run any Ruby command you want, from simple calculations to shell commands. You can even create shortcuts dynamically.</p>
+
+<p>Finally, Workcuts provides a special method, <code>terminal</code>, that enables you to launch commands in a new Terminal window, with the settings set specified in Workcuts&#8217; preferences :</p>
+
+<pre><code>terminal(script, exitafter = false, pressreturn = false)
+</code></pre>
+
+<p>Now let&#8217;s watch several examples !</p>
+
+<h3 id="examples">Examples</h3>
+
+<h4 id="baseforaprogrammingproject">Base for a programming project</h4>
+
+<pre><code>shortcut :reveal do
+    named &quot;Reveal in Finder&quot;
+    press &quot;o&quot;
+    will do
+        `open .`
+    end
+end
+
+shortcut :build do
+    named &quot;Make&quot;
+    press &quot;b&quot;
+    will do
+        puts `make 2&gt;&amp;1`
+    end
+end
+
+shortcut :buildclean do
+    named &quot;Clean&quot;
+    press &quot;Opt b&quot;
+    alternative
+    will do
+        puts `make clean 2&gt;&amp;1`
+    end
+end
+
+shortcut :run do
+    named &quot;Run&quot;
+    press &quot;r&quot;
+    will do
+        terminal &quot;./a.out&quot;, true, true
+    end
+end
+</code></pre>
+
+<h4 id="crazy:listeachfileindirectory">Crazy : list each file in directory</h4>
+
+<pre><code>Dir.new(&quot;.&quot;).each do |f|
+    shortcut f.to_sym do
+        named f
+        will do
+            `open #{f}`
+        end
+    end
+end
+</code></pre>
+
+<h2 id="releasenotes">Release notes</h2>
+
+<h3 id="workcuts1.0">Workcuts 1.0</h3>
+
+<ul>
+<li>Initial release</li>
+</ul>
+
+    </div>
+</body>
+</html>

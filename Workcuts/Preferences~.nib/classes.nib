@@ -1,35 +1,44 @@
 {
-    IBClasses = (
-        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+    IBClasses =     (
         {
-            ACTIONS = {
-                activate = id; 
-                clearRecents = id; 
-                close = id; 
-                editWorkcuts = id; 
-                open = id; 
-                openRecent = id; 
-                openShortcut = id; 
-                popupMenu = id; 
-            }; 
-            CLASS = WorkcutsAppDelegate; 
-            LANGUAGE = ObjC; 
-            OUTLETS = {
-                activateMenuItem = NSMenuItem; 
-                clearRecentsMenuItem = NSMenuItem; 
-                recentProjectsMenu = NSMenu; 
-                shortcutsMenu = NSMenu; 
-                statusMenu = NSMenu; 
-            }; 
-            SUPERCLASS = NSObject; 
-        }, 
+    CLASS = FirstResponder;
+    LANGUAGE = ObjC;
+    SUPERCLASS = NSObject;
+},
         {
-            ACTIONS = {setGlobalShortcut = id; }; 
-            CLASS = WorkcutsPreferencesController; 
-            LANGUAGE = ObjC; 
-            OUTLETS = {keyComboField = NSTextField; }; 
-            SUPERCLASS = NSWindowController; 
-        }
-    ); 
-    IBVersion = 1; 
+    ACTIONS =     {
+        activate = id;
+        clearRecents = id;
+        close = id;
+        editWorkcuts = id;
+        open = id;
+        openRecent = id;
+        openShortcut = id;
+        popupMenu = id;
+    };
+    CLASS = WorkcutsAppDelegate;
+    LANGUAGE = ObjC;
+    OUTLETS =     {
+        activateMenuItem = NSMenuItem;
+        clearRecentsMenuItem = NSMenuItem;
+        recentProjectsMenu = NSMenu;
+        shortcutsMenu = NSMenu;
+        statusMenu = NSMenu;
+    };
+    SUPERCLASS = NSObject;
+},
+        {
+    ACTIONS =     {
+        setGlobalShortcut = id;
+    };
+    CLASS = WorkcutsPreferencesController;
+    LANGUAGE = ObjC;
+    OUTLETS =     {
+        keyComboField = NSTextField;
+        settingsSets = NSPopUpButton;
+    };
+    SUPERCLASS = NSWindowController;
+}
+    );
+    IBVersion = 1;
 }

@@ -2,9 +2,11 @@
 //  WorkcutsAppDelegate.h
 //  Workcuts
 //
-//  Created by Jonathan Aceituno on 14/11/11.
-//  Copyright 2011 Jonathan Aceituno. All rights reserved.
-//
+/* This program is free software. It comes without any warranty, to
+ * the extent permitted by applicable law. You can redistribute it
+ * and/or modify it under the terms of the Do What The Fuck You Want
+ * To Public License, Version 2, as published by Sam Hocevar. See
+ * http://sam.zoy.org/wtfpl/COPYING for more details. */
 
 #import <Cocoa/Cocoa.h>
 #import <RubyCocoa/RubyCocoa.h>
@@ -25,6 +27,12 @@
 	IBOutlet NSMenu *statusMenu;
 	IBOutlet NSMenuItem *activateMenuItem;
 	IBOutlet NSMenuItem *clearRecentsMenuItem;
+	
+	IBOutlet NSWindow *evalErrorSheet;
+	IBOutlet NSTextView *errorView;
+	
+	IBOutlet NSWindow *cmdOutputWindow;
+	IBOutlet NSTextView *cmdOutputView;
 	
 	PTHotKey* shortcutsMenuHotKey;
 }
@@ -51,8 +59,8 @@
 -(IBAction)clearRecents:(id)sender;
 -(IBAction)openRecent:(id)sender;
 -(IBAction)openShortcut:(id)sender;
--(IBAction)openShortcutFromStatusMenu:(id)sender;
--(IBAction)openShortcutFromDock:(id)sender;
 -(IBAction)popupMenu:(id)sender;
+-(IBAction)closeErrorSheet:(id)sender;
+-(IBAction)help:(id)sender;
 
 @end

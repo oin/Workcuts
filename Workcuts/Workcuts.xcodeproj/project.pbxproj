@@ -16,6 +16,10 @@
 		6E81C90C147322DF004ED825 /* Workcuts.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6E81C90B147322DF004ED825 /* Workcuts.icns */; };
 		6E81C9EE14747606004ED825 /* StatusItemAlternate.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E81C9ED14747606004ED825 /* StatusItemAlternate.png */; };
 		6EA47A251475C1C600F3B3FA /* WorkcutsPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA47A241475C1C600F3B3FA /* WorkcutsPreferencesController.m */; };
+		6EF9577B14793D08000298EC /* ErrorSheet.nib in Resources */ = {isa = PBXBuildFile; fileRef = 6EF9577A14793D08000298EC /* ErrorSheet.nib */; };
+		6EF9585A1479700E000298EC /* ListTerminalSettingsSets.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 6EF958591479700E000298EC /* ListTerminalSettingsSets.applescript */; };
+		6EF9592C1479854D000298EC /* WorkcutsHelp.html in Resources */ = {isa = PBXBuildFile; fileRef = 6EF9592B1479854D000298EC /* WorkcutsHelp.html */; };
+		6EF959F81479A5D5000298EC /* CommandOutput.nib in Resources */ = {isa = PBXBuildFile; fileRef = 6EF959F71479A5D5000298EC /* CommandOutput.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -92,17 +96,21 @@
 		6E81C8871471B99F004ED825 /* WorkcutsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkcutsManager.m; sourceTree = "<group>"; };
 		6E81C8891471B9B4004ED825 /* WorkcutsProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkcutsProject.h; sourceTree = "<group>"; };
 		6E81C88A1471B9B4004ED825 /* WorkcutsProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkcutsProject.m; sourceTree = "<group>"; };
-		6E81C8D91473080D004ED825 /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Defaults.plist; sourceTree = "<group>"; };
+		6E81C8D91473080D004ED825 /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
 		6E81C8E9147321FB004ED825 /* StatusItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusItem.png; sourceTree = "<group>"; };
 		6E81C90B147322DF004ED825 /* Workcuts.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Workcuts.icns; sourceTree = "<group>"; };
 		6E81C9ED14747606004ED825 /* StatusItemAlternate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusItemAlternate.png; sourceTree = "<group>"; };
 		6EA47A231475C1C600F3B3FA /* WorkcutsPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkcutsPreferencesController.h; sourceTree = "<group>"; };
 		6EA47A241475C1C600F3B3FA /* WorkcutsPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkcutsPreferencesController.m; sourceTree = "<group>"; };
-		8D1107310486CEB800E47090 /* Workcuts-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Workcuts-Info.plist"; sourceTree = "<group>"; };
+		6EF9577A14793D08000298EC /* ErrorSheet.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = ErrorSheet.nib; sourceTree = "<group>"; };
+		6EF958591479700E000298EC /* ListTerminalSettingsSets.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = ListTerminalSettingsSets.applescript; sourceTree = "<group>"; };
+		6EF9592B1479854D000298EC /* WorkcutsHelp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WorkcutsHelp.html; sourceTree = "<group>"; };
+		6EF959F71479A5D5000298EC /* CommandOutput.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = CommandOutput.nib; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Workcuts-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Workcuts-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Workcuts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workcuts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41AF393147674CF007EA6E6 /* RubyCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RubyCocoa.framework; path = /Library/Frameworks/RubyCocoa.framework; sourceTree = "<absolute>"; };
 		B424D3FC147826C90095FFD4 /* Workcuts.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Workcuts.rb; sourceTree = "<group>"; };
-		B4E4F67714767A3100E206F1 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = English; path = English.lproj/PTKeyCodes.plist; sourceTree = "<group>"; };
+		B4E4F67714767A3100E206F1 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = English; path = English.lproj/PTKeyCodes.plist; sourceTree = "<group>"; };
 		B4E4F67914767A3100E206F1 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/PTKeyComboPanel.nib; sourceTree = "<group>"; };
 		B4E4F67A14767A3100E206F1 /* French */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = French; path = French.lproj/PTKeyCodes.plist; sourceTree = "<group>"; };
 		B4E4F67B14767A3100E206F1 /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = French.lproj/PTKeyComboPanel.nib; sourceTree = "<group>"; };
@@ -165,6 +173,7 @@
 				6E81C88A1471B9B4004ED825 /* WorkcutsProject.m */,
 				6EA47A231475C1C600F3B3FA /* WorkcutsPreferencesController.h */,
 				6EA47A241475C1C600F3B3FA /* WorkcutsPreferencesController.m */,
+				6EF958591479700E000298EC /* ListTerminalSettingsSets.applescript */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -226,6 +235,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6EF959F71479A5D5000298EC /* CommandOutput.nib */,
+				6EF9577A14793D08000298EC /* ErrorSheet.nib */,
 				B4E4F9631476B68700E206F1 /* WorkcutsOpenIcon.png */,
 				6E81C90B147322DF004ED825 /* Workcuts.icns */,
 				6E81C8E9147321FB004ED825 /* StatusItem.png */,
@@ -236,6 +247,7 @@
 				6E81C8681471B3C0004ED825 /* Credits.rtf */,
 				6E81C8D91473080D004ED825 /* Defaults.plist */,
 				B4E4F7351476873500E206F1 /* Preferences.nib */,
+				6EF9592B1479854D000298EC /* WorkcutsHelp.html */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -332,6 +344,7 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Workcuts" */;
 			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -369,6 +382,9 @@
 				B4E4FB6C1476C9F000E206F1 /* app_init.rb in Resources */,
 				B4E4FBCF1476CAED00E206F1 /* WorkcutsKey.rb in Resources */,
 				B424D3FD147826C90095FFD4 /* Workcuts.rb in Resources */,
+				6EF9577B14793D08000298EC /* ErrorSheet.nib in Resources */,
+				6EF9592C1479854D000298EC /* WorkcutsHelp.html in Resources */,
+				6EF959F81479A5D5000298EC /* CommandOutput.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +410,7 @@
 				B4E4F8A014769E9200E206F1 /* UKFNSubscribeFileWatcher.m in Sources */,
 				B4E4F8A314769E9200E206F1 /* UKKQueue.m in Sources */,
 				B4E4F8A514769E9200E206F1 /* UKMainThreadProxy.m in Sources */,
+				6EF9585A1479700E000298EC /* ListTerminalSettingsSets.applescript in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

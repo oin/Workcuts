@@ -2,9 +2,11 @@
 //  WorkcutsProject.m
 //  Workcuts
 //
-//  Created by Jonathan Aceituno on 14/11/11.
-//  Copyright 2011 Jonathan Aceituno. All rights reserved.
-//
+/* This program is free software. It comes without any warranty, to
+ * the extent permitted by applicable law. You can redistribute it
+ * and/or modify it under the terms of the Do What The Fuck You Want
+ * To Public License, Version 2, as published by Sam Hocevar. See
+ * http://sam.zoy.org/wtfpl/COPYING for more details. */
 
 #import "WorkcutsProject.h"
 #import "UKKQueue/UKKQueue.h"
@@ -35,6 +37,9 @@
 	
 	path = thePath;
 	shortcuts = [[NSMutableArray alloc] init];
+	
+	// Set the path in the Ruby world
+	[[[[NSClassFromString(@"WorkcutsShortcutProvider") alloc] init] autorelease] setpath:[self path]];
 	
 	[self watchConfigFile];
 	
@@ -93,6 +98,8 @@
 
 -(void)evaluate
 {
+	// Clear the shortcuts
+	[[[[NSClassFromString(@"WorkcutsShortcutProvider") alloc] init] autorelease] clear];
 	// Reload the config file
 	NSError *err = nil;
 	NSString *contents = [NSString stringWithContentsOfFile:[self configFilePath] encoding:NSUTF8StringEncoding error:&err];
